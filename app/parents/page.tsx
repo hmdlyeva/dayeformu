@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./style.module.scss";
-import { submitForm } from "../api/parent/route";
+import { submitForm } from "../../utils/submitForm";
 import Link from "next/link";
 import ThankYouModal from "../tesekkurmodal/page";
 
