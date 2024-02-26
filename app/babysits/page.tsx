@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./style.module.scss";
-import { submitForm } from "../../utils/submitForm";
+import { submitFormBabysits } from "../../utils/submitForm";
 import Link from "next/link";
 import ThankYouModal from "../tesekkurmodal/page";
 const BabysitsForm: React.FC = () => {
@@ -46,7 +46,7 @@ const BabysitsForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      await submitForm(formData);
+      await submitFormBabysits(formData);
       setShowModal(true);
       console.log("Form Data successfully submitted to Firestore");
     } catch (error) {
