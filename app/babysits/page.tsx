@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import styles from "./style.module.scss";
 import { submitFormBabysits } from "../../utils/submitForm";
 import Link from "next/link";
-import ThankYouModal from "../tesekkurmodal/page";
+// import ThankYouModal from "../tesekkurmodal/page";
 const BabysitsForm: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -16,7 +16,7 @@ const BabysitsForm: React.FC = () => {
     language: [] as string[],
     addNote: "",
   });
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -47,16 +47,16 @@ const BabysitsForm: React.FC = () => {
     e.preventDefault();
     try {
       await submitFormBabysits(formData);
-      setShowModal(true);
+      // setShowModal(true);
       console.log("Form Data successfully submitted to Firestore");
     } catch (error) {
       console.error("Error submitting form data to Firestore:", error);
     }
   };
 
-  const closeModal = () => {
-    setShowModal(false);
-  };
+  // const closeModal = () => {
+  //   setShowModal(false);
+  // };
 
   return (
     <div className={styles.formContainer}>
@@ -217,7 +217,7 @@ const BabysitsForm: React.FC = () => {
 
         <button type="submit">Submit</button>
       </form>
-      {showModal && <ThankYouModal onClose={closeModal} />}
+      {/* {showModal && <ThankYouModal onClose={closeModal} />} */}
     </div>
   );
 };

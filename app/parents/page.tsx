@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import styles from "./style.module.scss";
 import { submitForm } from "../../utils/submitForm";
 import Link from "next/link";
-import ThankYouModal from "../tesekkurmodal/page";
+// import ThankYouModal from "../tesekkurmodal/page";
 
 const ParentForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -16,7 +16,7 @@ const ParentForm: React.FC = () => {
     useapp: false,
     addNote: "",
   });
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -43,16 +43,16 @@ const ParentForm: React.FC = () => {
     e.preventDefault();
     try {
       await submitForm(formData);
-      setShowModal(true);
+      // setShowModal(true);
       console.log("Form Data successfully submitted to Firestore");
     } catch (error) {
       console.error("Error submitting form data to Firestore:", error);
     }
   };
 
-  const closeModal = () => {
-    setShowModal(false);
-  };
+  // const closeModal = () => {
+  //   setShowModal(false);
+  // };
 
   return (
     <div className={styles.formContainer}>
@@ -205,7 +205,7 @@ const ParentForm: React.FC = () => {
 
         <button type="submit">Submit</button>
       </form>
-      {showModal && <ThankYouModal onClose={closeModal} />}
+      {/* {showModal && <ThankYouModal onClose={closeModal} />} */}
     </div>
   );
 };
